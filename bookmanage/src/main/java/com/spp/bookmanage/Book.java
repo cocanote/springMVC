@@ -6,6 +6,8 @@ public class Book {
 	private String author;
 	private String isbn;
 	private String price;
+	
+	
 	public String getName() {
 		return name;
 	}
