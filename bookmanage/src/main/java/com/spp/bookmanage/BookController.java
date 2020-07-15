@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,11 +13,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/book")
 public class BookController {
 	
-	BookService bookService;
-	public BookController(){
-		bookService = new BookService();
-	}
+	IBookService bookService;
 	
+	@Autowired
+	public void setBookService(IBookService bookService) {
+		this.bookService = bookService;
+	}
+
 	@RequestMapping("/reg")
 	public String registerBook(Model model) {
 	

@@ -5,8 +5,10 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
 
+import org.springframework.stereotype.Repository;
 
 
+@Repository
 public class BookDao implements IBookDao {
 
 	private HashMap<String,Book> dbBook;

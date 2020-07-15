@@ -2,13 +2,14 @@ package com.spp.bookmanage;
 
 import java.util.ArrayList;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
 public class BookService implements IBookService {
 
 	BookDao bookDao;
 	
-	public BookService() {
-		bookDao= new BookDao();
-	}
 	
 	@Override
 	public void registerBook(String name, String author, String isbn, String price) {
@@ -43,4 +44,12 @@ public class BookService implements IBookService {
 		
 	}
 
+	
+	@Autowired	
+	public void setBookDao(BookDao bookDao) {
+		this.bookDao = bookDao;
+	}
+
+	
+	
 }

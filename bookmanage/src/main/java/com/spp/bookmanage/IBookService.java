@@ -9,4 +9,6 @@ public interface IBookService {
 	void modifyBook(String name, String author, String isbn, String price) ;
 	Book readBook(String isbn);
 	void deleteBook(String isbn);
+	
+	
 }
